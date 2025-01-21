@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Product
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list *ngFor="let pro of product">
+    <ion-item >
+      <ion-thumbnail slot="start">
+        <img [src]="pro.image"/>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ pro.name }}</h2>
+        <p>ราคา {{ pro.price }} บาท</p>
+      </ion-label>
+      <ion-button color="success" fill="outline" (click)="addToCart(pro)">
+        เพิ่มในตะกร้า
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
